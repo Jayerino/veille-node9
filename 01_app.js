@@ -33,11 +33,15 @@ app.get('/detruire/:_id', (req, res) => {
 	})
 })
 
-app.get('/ajouter', (req, res) => {
+app.get('/formulaire', (req, res) => {
+	res.render('gabaritAjouter.ejs')
+})
+
+app.post('/ajouter', (req, res) => {
 	db.collection('adresse').save(req.body, (err, result) => {
  		if (err) return console.log(err)
  		console.log('sauvegarder dans la BD')
- 		res.redirect('/')
+ 		res.redirect('/adresses')
  	})
 })
 

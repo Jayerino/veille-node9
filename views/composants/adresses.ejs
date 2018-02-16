@@ -8,6 +8,7 @@
 				<% for(elem in elm) {%>
 					<td><%= elem %></td>
 				<%}%>
+				<a href="/formulaire">Ajouter</a>
 			</tr>
 		<% } %>
 
@@ -18,5 +19,16 @@
 			<td><a><i class="far fa-save"></i></a></td>
 			<td><a href="/detruire/<%= elm._id %>"><i class="far fa-trash-alt"></i></a></td>
 		</tr>
-	<% } %>
+		<% } %>
+		
+		<% if (adresses.length <= 0) { %>
+			<tr>
+				<td>
+					<p>Voulez-vous ajouter un nouveau membre?</p>
+				</td>
+				<td>
+					<a href="/formulaire">Ajouter</a>
+				</td>
+			</tr>
+		<% } %>
 </table>
