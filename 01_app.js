@@ -22,6 +22,7 @@ app.get('/adresses', (req, res) => {
   })
 })
 
+/*-----------------Detruire---------------*/
 app.get('/detruire/:_id', (req, res) => {
 
 
@@ -33,10 +34,12 @@ app.get('/detruire/:_id', (req, res) => {
 	})
 })
 
+/*-----------------formulaire---------------*/
 app.get('/formulaire', (req, res) => {
 	res.render('gabaritAjouter.ejs')
 })
 
+/*-----------------ajouter---------------*/
 app.post('/ajouter', (req, res) => {
 	db.collection('adresse').save(req.body, (err, result) => {
  		if (err) return console.log(err)
@@ -45,6 +48,7 @@ app.post('/ajouter', (req, res) => {
  	})
 })
 
+/*-----------------trier---------------*/
 app.get('/trier/:clef/:ordre', (req, res) => {
 let clef = req.params.clef
  	let ordre = (req.params.ordre == 'asc' ? 1 : -1)
