@@ -1,0 +1,23 @@
+{
+  "name": "veille-node-5",
+  "version": "1.0.0",
+  "description": "Exercice_#5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "ejs",
+    "monodb"
+  ],
+  "author": "Emile_Bisaillon",
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.2",
+    "parser": "^0.1.4"
+  }
+}
