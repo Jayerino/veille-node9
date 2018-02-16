@@ -45,6 +45,15 @@ app.post('/ajouter', (req, res) => {
  	})
 })
 
+app.get('/trier/:clef/:ordre', (req, res) => {
+let clef = req.params.clef
+ 	let ordre = (req.params.ordre == 'asc' ? 1 : -1)
+	let cursor = db.collection('adresse').find().sort(clef,ordre).toArray(function(err, resultat){
+		ordre = (req.params.ordre == 'asc' ? 'des' : 'asc')
+		res.render('gabaritAdresses.ejs', {adresses: resultat, clef, ordre})
+	})
+})
+
 
 /*----------------------Connexion à MongoDB et au serveur Node.js-----------------------*/
 let db // variable qui contiendra le lien sur la BD

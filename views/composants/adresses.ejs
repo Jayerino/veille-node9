@@ -1,3 +1,16 @@
+<%
+	objTri = {
+		"_id" : 'asc',
+		"nom" : 'asc',
+		"prenom" : 'asc',
+		"telephone" : 'asc',
+		"courriel" : 'asc'
+	}
+
+	if (typeof clef !== 'undefined') {
+		objTri[clef] = ordre
+	}
+%>
 <table class="tableau">
 	<% let noLigne = 0 %>
 
@@ -5,10 +18,12 @@
 		<% if (noLigne==0) { %>
 			<tr>
 				<% noLigne++ %>
-				<% for(elem in elm) {%>
-					<td><%= elem %></td>
-				<%}%>
-				<a href="/formulaire">Ajouter</a>
+				<td><a href = "/trier/_id/<%= objTri._id %>">ID</a></td>
+				<td><a href = "/trier/nom/<%= objTri.nom %>">NOM</a></td>
+				<td><a href = "/trier/prenom/<%= objTri.prenom %>">PRENOM</a></td>
+				<td><a href = "/trier/telephone/<%= objTri.telephone %>">TELEPHONE</a></td>
+				<td><a href = "/trier/courriel/<%= objTri.courriel %>">COURRIEL</a></td>
+				<td><a href="/formulaire">Ajouter</a></td>
 			</tr>
 		<% } %>
 
@@ -20,7 +35,7 @@
 			<td><a href="/detruire/<%= elm._id %>"><i class="far fa-trash-alt"></i></a></td>
 		</tr>
 		<% } %>
-		
+
 		<% if (adresses.length <= 0) { %>
 			<tr>
 				<td>
