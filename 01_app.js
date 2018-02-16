@@ -3,6 +3,7 @@ const app = express()
 const fs = require('fs')
 const bodyParser= require('body-parser')
 const MongoClient = require('mongodb').MongoClient
+const ObjectID = require('mongodb').ObjectID;
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
@@ -21,7 +22,18 @@ app.get('/adresses', (req, res) => {
   })
 })
 
-app.post('/ajouter', (req, res) => {
+app.get('/detruire/:_id', (req, res) => {
+
+
+	let _id = req.params._id
+
+	db.collection('adresse').findOneAndDelete({_id: ObjectID(_id)}, (err, resultat) => {
+		if (err) return console.log(err)
+		res.redirect('/adresses')
+	})
+})
+
+app.get('/ajouter', (req, res) => {
 	db.collection('adresse').save(req.body, (err, result) => {
  		if (err) return console.log(err)
  		console.log('sauvegarder dans la BD')

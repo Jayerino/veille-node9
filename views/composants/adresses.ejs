@@ -15,6 +15,8 @@
 			<% for(elem in elm) {%>
 				<td><%= elm[elem] %></td>
 			<%}%>
+			<td><a><i class="far fa-save"></i></a></td>
+			<td><a href="/detruire/<%= elm._id %>"><i class="far fa-trash-alt"></i></a></td>
 		</tr>
 	<% } %>
 </table>
