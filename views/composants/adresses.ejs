@@ -18,7 +18,6 @@
 		<% if (noLigne==0) { %>
 			<tr>
 				<% noLigne++ %>
-				<td><a href = "/trier/_id/<%= objTri._id %>">Id</a></td>
 				<td><a href = "/trier/nom/<%= objTri.nom %>">Nom</a></td>
 				<td><a href = "/trier/prenom/<%= objTri.prenom %>">Prenom</a></td>
 				<td><a href = "/trier/telephone/<%= objTri.telephone %>">Telephone</a></td>
@@ -28,10 +27,13 @@
 		<% } %>
 
 		<tr>
-			<% for(elem in elm) {%>
-				<td><%= elm[elem] %></td>
-			<%}%>
-			<td><a><i class="far fa-save"></i></a></td>
+			
+			<td contenteditable="true" class="info"><%= elm.nom %></td>
+			<td contenteditable="true" class="info"><%= elm.prenom %></td>
+			<td contenteditable="true" class="info"><%= elm.telephone %></td>
+			<td contenteditable="true" class="info"><%= elm.courriel %></td>
+			
+			<td><a id="save"><i class="far fa-save"></i></a></td>
 			<td><a href="/detruire/<%= elm._id %>"><i class="far fa-trash-alt"></i></a></td>
 		</tr>
 		<% } %>
