@@ -13,7 +13,7 @@
 %>
 
 <form id="rechercheForm" action="/recherche" method="POST">
-	<input type="text" name="prenom">
+	<input type="text" placeholder="entrez un prénom" name="prenom">
 	<input type="submit">
 </form>
 
@@ -43,9 +43,9 @@
 				<td contenteditable="true" class="info"><%= elm.telephone %></td>
 				<td contenteditable="true" class="info"><%= elm.courriel %></td>
 				
-				<td><a style="cursor: pointer; color : #EAD610;" class="sauver"><i class="far fa-save"></i></a></td>
-				<td><a style="color : #EA1B1B;" href="/detruire/<%= elm._id %>"><i class="far fa-trash-alt"></i></a></td>
-				<td><a style="color : #EA1B1B;" href="/profil/<%= elm._id %>"><i class="far fa-address-book"></i></a></td>
+				<td class="boutons"><a style="cursor: pointer; color : #EAD610;" class="sauver"><i class="far fa-save"></i></a></td>
+				<td class="boutons"><a style="color : #EA1B1B;" href="/detruire/<%= elm._id %>"><i class="far fa-trash-alt"></i></a></td>
+				<td class="boutons"><a style="color : #EA1B1B;" href="/profil/<%= elm._id %>"><i class="far fa-address-book"></i></a></td>
 			</tr>
 			<% } %>
 
@@ -60,6 +60,11 @@
 				</tr>
 			<% } %>
 	</table>
+	<div class="genererVider">
+		<a  href="/peupler"><i class="fas fa-address-card"></i></a>
+		<a  href="/vider"><i class="fas fa-bomb"></i></a>
+	</div>
+	
 </div>
 
 <script type="text/javascript">
