@@ -1,0 +1,26 @@
+body {
+	background-color : #FAFAFA;
+}
+
+.a_menu {
+	font-size: 1.4em;
+	padding: 2%;
+	margin : 2%;
+	text-decoration: none;
+	color: black;
+}
+
+table {
+	border : 2px solid black;
+	display: flex;
+	justify-content: space-around;
+	align-items: baseline;
+}
+
+table tr {
+
+}
+
+table tr td {
+	width : 15%;
+}
