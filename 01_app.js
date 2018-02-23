@@ -51,10 +51,12 @@ app.post('/ajouter', (req, res) => {
 app.post('/modifier', (req, res) => {
 	req.body._id = ObjectID(req.body._id)
 
+	//if ()
+
  	db.collection('adresse').save(req.body, (err, result) => { 
  		if (err) return console.log(err) 
  		console.log('sauvegarder dans la BD') 
- 		res.redirect('/list') 
+ 		res.redirect('/adresses') 
  	})
 })
 
