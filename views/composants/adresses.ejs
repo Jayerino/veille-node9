@@ -11,46 +11,48 @@
 		objTri[clef] = ordre
 	}
 %>
-<table class="tableau">
-	<% let noLigne = 0 %>
+<div class="principal">
+	<table class="tableau">
+		<% let noLigne = 0 %>
 
-	<% for(elm of adresses) {%>
-		<% if (noLigne==0) { %>
-			<tr id="tableHead">
-				<% noLigne++ %>
-				<td style="display : none;"><a href = "/trier/_id/<%= objTri._id %>">Id</a></td>
-				<td><a href = "/trier/nom/<%= objTri.nom %>">Nom</a></td>
-				<td><a href = "/trier/prenom/<%= objTri.prenom %>">Prenom</a></td>
-				<td><a href = "/trier/telephone/<%= objTri.telephone %>">Telephone</a></td>
-				<td><a href = "/trier/courriel/<%= objTri.courriel %>">Courriel</a></td>
-				<td><a href="/formulaire"><i class="fas fa-user-plus"></i></a></td>
-			</tr>
-		<% } %>
+		<% for(elm of adresses) {%>
+			<% if (noLigne==0) { %>
+				<tr id="tableHead">
+					<% noLigne++ %>
+					<td style="display : none;"><a href = "/trier/_id/<%= objTri._id %>">Id</a></td>
+					<td><a href = "/trier/nom/<%= objTri.nom %>">Nom</a></td>
+					<td><a href = "/trier/prenom/<%= objTri.prenom %>">Prenom</a></td>
+					<td><a href = "/trier/telephone/<%= objTri.telephone %>">Telephone</a></td>
+					<td><a href = "/trier/courriel/<%= objTri.courriel %>">Courriel</a></td>
+					<td><a href="/formulaire"><i class="fas fa-user-plus"></i></a></td>
+				</tr>
+			<% } %>
 
 
-		<tr>
-			<td style="display : none;" class="info"><%= elm._id %></td>
-			<td contenteditable="true" class="info"><%= elm.nom %></td>
-			<td contenteditable="true" class="info"><%= elm.prenom %></td>
-			<td contenteditable="true" class="info"><%= elm.telephone %></td>
-			<td contenteditable="true" class="info"><%= elm.courriel %></td>
-			
-			<td><a style="cursor: pointer;" class="sauver"><i class="far fa-save"></i></a></td>
-			<td><a href="/detruire/<%= elm._id %>"><i class="far fa-trash-alt"></i></a></td>
-		</tr>
-		<% } %>
-
-		<% if (adresses.length <= 0) { %>
 			<tr>
-				<td>
-					<p>Voulez-vous ajouter un nouveau membre?</p>
-				</td>
-				<td>
-					<a href="/formulaire">Ajouter</a>
-				</td>
+				<td style="display : none;" class="info"><%= elm._id %></td>
+				<td contenteditable="true" class="info"><%= elm.nom %></td>
+				<td contenteditable="true" class="info"><%= elm.prenom %></td>
+				<td contenteditable="true" class="info"><%= elm.telephone %></td>
+				<td contenteditable="true" class="info"><%= elm.courriel %></td>
+				
+				<td><a style="cursor: pointer; color : #EAD610;" class="sauver"><i class="far fa-save"></i></a></td>
+				<td><a style="color : #EA1B1B;" href="/detruire/<%= elm._id %>"><i class="far fa-trash-alt"></i></a></td>
 			</tr>
-		<% } %>
-</table>
+			<% } %>
+
+			<% if (adresses.length <= 0) { %>
+				<tr>
+					<td>
+						<p>Voulez-vous ajouter un nouveau membre?</p>
+					</td>
+					<td>
+						<a style="color: #34D40D;" href="/formulaire"><i class="fas fa-user-plus"></i></a>
+					</td>
+				</tr>
+			<% } %>
+	</table>
+</div>
 
 <script type="text/javascript">
  let elmSauver = document.querySelectorAll('.sauver')
