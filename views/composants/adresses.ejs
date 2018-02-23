@@ -11,6 +11,13 @@
 		objTri[clef] = ordre
 	}
 %>
+
+<form id="rechercheForm" action="/recherche" method="POST">
+	<input type="text" name="prenom">
+	<input type="submit">
+</form>
+
+
 <div class="principal">
 	<table class="tableau">
 		<% let noLigne = 0 %>
@@ -38,6 +45,7 @@
 				
 				<td><a style="cursor: pointer; color : #EAD610;" class="sauver"><i class="far fa-save"></i></a></td>
 				<td><a style="color : #EA1B1B;" href="/detruire/<%= elm._id %>"><i class="far fa-trash-alt"></i></a></td>
+				<td><a style="color : #EA1B1B;" href="/profil/<%= elm._id %>"><i class="far fa-address-book"></i></a></td>
 			</tr>
 			<% } %>
 
