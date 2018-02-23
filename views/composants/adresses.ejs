@@ -16,7 +16,7 @@
 
 	<% for(elm of adresses) {%>
 		<% if (noLigne==0) { %>
-			<tr>
+			<tr id="tableHead">
 				<% noLigne++ %>
 				<td style="display : none;"><a href = "/trier/_id/<%= objTri._id %>">Id</a></td>
 				<td><a href = "/trier/nom/<%= objTri.nom %>">Nom</a></td>
@@ -36,7 +36,7 @@
 			<td contenteditable="true" class="info"><%= elm.telephone %></td>
 			<td contenteditable="true" class="info"><%= elm.courriel %></td>
 			
-			<td><a class="sauver"><i class="far fa-save"></i></a></td>
+			<td><a style="cursor: pointer;" class="sauver"><i class="far fa-save"></i></a></td>
 			<td><a href="/detruire/<%= elm._id %>"><i class="far fa-trash-alt"></i></a></td>
 		</tr>
 		<% } %>
