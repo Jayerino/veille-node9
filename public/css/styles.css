@@ -2,6 +2,16 @@ body {
 	background-color : #FAFAFA;
 }
 
+.formAjouter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.formAjouter input {
+	margin: 2%;
+}
+
 .leMenu {
 	width: 60%;
 	margin: 0 auto;

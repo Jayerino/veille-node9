@@ -4,6 +4,7 @@ const fs = require('fs')
 const bodyParser= require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const ObjectID = require('mongodb').ObjectID;
+const peupler = require("./public/data/Peupler")
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
@@ -68,6 +69,17 @@ let clef = req.params.clef
 	let cursor = db.collection('adresse').find().sort(clef,ordre).toArray(function(err, resultat){
 		ordre = (req.params.ordre == 'asc' ? 'des' : 'asc')
 		res.render('gabaritAdresses.ejs', {adresses: resultat, clef, ordre})
+	})
+})
+
+
+app.get('/peupler', (req, res) => {
+
+	let resultat = peupler();
+
+	db.collection("adresse").insert(resultat, (err, result) => {
+		if (err) return console.log(err)
+		res.redirect("/adresses")
 	})
 })
 
