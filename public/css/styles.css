@@ -5,8 +5,18 @@ body {
 }
 
 header {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+
 	background-color: #001D40;
 	padding-bottom: 5%;
+}
+
+#logo {
+	font-size: 15em;
+	color: #FAFAFA;
+	text-align: center;
 }
 
 .formAjouter {
@@ -147,4 +157,27 @@ footer h2 {
 	padding-bottom: 5%;
 	font-size: 1.4em;
 	text-align: center;
+}
+
+
+/*-------------===================ACCUEIL===============----------------*/
+
+main {
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
+	flex-direction: 
+}
+
+main h1 {
+	font-size: 2em;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+main p {
+	font-size: 1.2em;
+	padding-bottom: 10%;
 }
