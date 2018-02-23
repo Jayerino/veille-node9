@@ -19,10 +19,11 @@ header {
 .formAjouter input {
 	margin: 1%;
 	padding: 1%;
+	border-radius: 20px;
 }
 
 .leMenu {
-	width: 60%;
+	width: 40%;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-around;
@@ -32,7 +33,7 @@ header {
 .a_menu {
 	width: 20%;
 	text-align: center;
-	font-size: 1.4em;
+	font-size: 1.8em;
 	padding: 2%;
 	margin : 2%;
 	text-decoration: none;
@@ -45,8 +46,21 @@ header {
 	color : #aaa;
 }
 
+#rechercheForm {
+	margin-top: 2.5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#rechercheForm input {
+	margin: 1%;
+	padding: 1%;
+	border-radius: 20px;
+}
+
 .principal {
-	margin-top: 5%;
+	margin-top: 2.5%;
 	margin-bottom: 5%;
 }
 
@@ -93,11 +107,13 @@ header {
 }
 
 .genererVider a {
+	font-size: 2.2em;
+	color: #001D40;
 	border : 2px solid #001D40;
 	border-radius: 20px;
 	width: 10%;
 	margin: 2%;
-	padding : 2%;
+	padding : 1.5%;
 	text-align: center;
 	text-decoration: none;
 }
