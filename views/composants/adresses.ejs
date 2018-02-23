@@ -13,7 +13,7 @@
 %>
 
 <form id="rechercheForm" action="/recherche" method="POST">
-	<input type="text" placeholder="entrez un prénom" name="prenom">
+	<input type="text" placeholder="Entrez un prénom" name="prenom">
 	<input type="submit" value="Rechercher">
 </form>
 
@@ -42,10 +42,10 @@
 				<td contenteditable="true" class="info"><%= elm.prenom %></td>
 				<td contenteditable="true" class="info"><%= elm.telephone %></td>
 				<td contenteditable="true" class="info"><%= elm.courriel %></td>
-				
+
 				<td class="boutons"><a style="cursor: pointer; color : #EAD610;" class="sauver"><i class="far fa-save"></i></a></td>
 				<td class="boutons"><a style="color : #EA1B1B;" href="/detruire/<%= elm._id %>"><i class="far fa-trash-alt"></i></a></td>
-				<td class="boutons"><a style="color : #EA1B1B;" href="/profil/<%= elm._id %>"><i class="far fa-address-book"></i></a></td>
+				<td class="boutons"><a style="color : #001D40;" href="/profil/<%= elm._id %>"><i class="far fa-address-book"></i></a></td>
 			</tr>
 			<% } %>
 
