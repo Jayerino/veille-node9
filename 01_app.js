@@ -72,7 +72,7 @@ let clef = req.params.clef
 	})
 })
 
-
+/*------------------Peupler------------------*/ 
 app.get('/peupler', (req, res) => {
 
 	let resultat = peupler();
@@ -83,6 +83,13 @@ app.get('/peupler', (req, res) => {
 	})
 })
 
+
+/*--------------vider-----------------*/
+app.get('/vider', (req, res) => {
+	db.collection("adresse").drop()
+
+	res.redirect("/adresses")
+})
 
 /*----------------------Connexion à MongoDB et au serveur Node.js-----------------------*/
 let db // variable qui contiendra le lien sur la BD
