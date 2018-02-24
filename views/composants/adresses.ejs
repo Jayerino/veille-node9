@@ -25,6 +25,7 @@
 
 		<% for(elm of adresses) {%>
 			<% if (noLigne==0) { %>
+			<!-- TABLE HEAD -->
 				<tr id="tableHead">
 					<% noLigne++ %>
 					<td style="display : none;"><a href = "/trier/_id/<%= objTri._id %>">Id</a></td>
@@ -36,7 +37,7 @@
 				</tr>
 			<% } %>
 
-
+			<!-- TABLE DATA -->
 			<tr>
 				<td style="display : none;" class="info"><%= elm._id %></td>
 				<td contenteditable="true" class="info"><%= elm.nom %></td>
