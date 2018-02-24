@@ -29,8 +29,8 @@
 					<td style="display : none;"><a href = "/trier/_id/<%= objTri._id %>">Id</a></td>
 					<td><a href = "/trier/nom/<%= objTri.nom %>">Nom</a></td>
 					<td><a href = "/trier/prenom/<%= objTri.prenom %>">Prenom</a></td>
-					<td><a href = "/trier/telephone/<%= objTri.telephone %>">Telephone</a></td>
-					<td><a href = "/trier/courriel/<%= objTri.courriel %>">Courriel</a></td>
+					<td class="ligneEnl2"><a href = "/trier/telephone/<%= objTri.telephone %>">Telephone</a></td>
+					<td class="ligneEnl1"><a href = "/trier/courriel/<%= objTri.courriel %>">Courriel</a></td>
 					<td><a href="/formulaire"><i class="fas fa-user-plus"></i></a></td>
 				</tr>
 			<% } %>
@@ -40,8 +40,8 @@
 				<td style="display : none;" class="info"><%= elm._id %></td>
 				<td contenteditable="true" class="info"><%= elm.nom %></td>
 				<td contenteditable="true" class="info"><%= elm.prenom %></td>
-				<td contenteditable="true" class="info"><%= elm.telephone %></td>
-				<td contenteditable="true" class="info"><%= elm.courriel %></td>
+				<td class="ligneEnl2"contenteditable="true" class="info"><%= elm.telephone %></td>
+				<td class="ligneEnl1" contenteditable="true" class="info"><%= elm.courriel %></td>
 
 				<td class="boutons"><a style="cursor: pointer; color : #EAD610;" class="sauver"><i class="far fa-save"></i></a></td>
 				<td class="boutons"><a style="color : #EA1B1B;" href="/detruire/<%= elm._id %>"><i class="far fa-trash-alt"></i></a></td>
