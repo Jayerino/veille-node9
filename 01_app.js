@@ -36,6 +36,18 @@ app.get('/detruire/:_id', (req, res) => {
 	})
 })
 
+/*-----------------Detruire AJAX---------------*/
+app.post('/ajax_detruire', (req, res) => {
+
+
+	let _id = req.body._id
+
+	db.collection('adresse').findOneAndDelete({_id: ObjectID(_id)}, (err, resultat) => {
+		if (err) return console.log(err)
+		res.send("est détruit")
+	})
+})
+
 /*-----------------formulaire---------------*/
 app.get('/formulaire', (req, res) => {
 	res.render('gabaritAjouter.ejs')
