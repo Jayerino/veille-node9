@@ -42,7 +42,7 @@
 				<td style="display : none;" class="info"><%= elm._id %></td>
 				<td contenteditable="true" class="info"><%= elm.nom %></td>
 				<td contenteditable="true" class="info"><%= elm.prenom %></td>
-				<td class="ligneEnl2"contenteditable="true" class="info"><%= elm.telephone %></td>
+				<td class="ligneEnl2" contenteditable="true" class="info"><%= elm.telephone %></td>
 				<td class="ligneEnl1" contenteditable="true" class="info"><%= elm.courriel %></td>
 
 				<td class="boutons"><a style="cursor: pointer; color : #EAD610;" class="sauver"><i class="far fa-save"></i></a></td>
@@ -116,7 +116,7 @@ function traiterErase(e)
  	let nom = laLigne.children[1].innerHTML
  	let prenom = laLigne.children[2].innerHTML
  	let telephone = laLigne.children[3].innerHTML
- 	let email = laLigne.children[4].innerHTML
+ 	let courriel = laLigne.children[4].innerHTML
 
 	xhr = new XMLHttpRequest();
 	xhr.open('POST', "/ajax_modifier", true);
@@ -124,7 +124,7 @@ function traiterErase(e)
 		"nom" : nom,
 		"prenom" : prenom,
 		"telephone" : telephone,
-		"email" : email,
+		"courriel" : courriel,
 		"_id" : id
 	}
 	console.log(data)
