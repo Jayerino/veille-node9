@@ -72,17 +72,42 @@
 
 <!-- JAVASCRIPT CLIENT -->
 <script type="text/javascript">
+
+
+function traiterRequest(e)
+{
+ console.log("xhr.readyState = " + xhr.readyState)
+ console.log("xhr.status = " + xhr.status)
+ if(xhr.readyState == 4 && xhr.status == 200)
+ {
+ console.log('ajax fonctionne')
+ var response = JSON.parse(xhr.responseText);
+ console.log(response)
+ console.log("response._id = " + response._id)
+ console.log(xhr.responseText);
+ console.log(reponse._id)
+
+// elmLigne.style.backgroundColor = "#0f0"
+ }
+}
+
+
+// dans notre fichier .ejs
+// Notre code JavaScript pour effectuer un transfert AJAX
+
+
  let elmSauver = document.querySelectorAll('.sauver')
  console.log('elmSauver = ' + elmSauver.length)
  for (elm of elmSauver)
  {
- elm.addEventListener('click', function(){
+ elm.addEventListener('click', function(evt){
  /* 
  console.log(this
  .parentNode
  .parentNode
  .children[1].innerHTML)
  */
+ evt.preventDefault();
  let laLigne = this.parentNode.parentNode
  let id = laLigne.children[0].innerHTML
  let nom = laLigne.children[1].innerHTML
@@ -90,16 +115,20 @@
  let telephone = laLigne.children[3].innerHTML
  let email = laLigne.children[4].innerHTML
 
-let elmForm = document.getElementById('mon_formulaire')
- console.log(elmForm.tagName)
- let elmInput = elmForm.querySelectorAll('input')
- elmInput[0].value = id
- elmInput[1].value = nom
- elmInput[2].value = prenom
- elmInput[3].value = telephone
- elmInput[4].value = email
-
-elmForm.submit()
+xhr = new XMLHttpRequest();
+xhr.open('POST', "/ajax_modifier", true);
+data = {
+"nom" : nom,
+"prenom" : prenom,
+"telephone" : telephone,
+"email" : email,
+"_id" : id
+}
+console.log(data)
+sData = JSON.stringify(data);
+xhr.setRequestHeader('Content-type', 'application/json');
+xhr.send(sData);
+xhr.addEventListener("readystatechange", traiterRequest, false);
 
  })
  } 

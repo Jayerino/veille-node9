@@ -7,6 +7,7 @@ const ObjectID = require('mongodb').ObjectID;
 const peupler = require("./public/data/Peupler")
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
@@ -53,14 +54,27 @@ app.post('/ajouter', (req, res) => {
 app.post('/modifier', (req, res) => {
 	req.body._id = ObjectID(req.body._id)
 
-	//if ()
-
  	db.collection('adresse').save(req.body, (err, result) => { 
  		if (err) return console.log(err) 
  		console.log('sauvegarder dans la BD') 
  		res.redirect('/adresses') 
  	})
 })
+
+
+// ===================AJAX MODIFER=======================
+
+
+app.post('/ajax_modifier', (req, res) => {
+	req.body._id = ObjectID(req.body._id)
+
+ 	db.collection('adresse').save(req.body, (err, result) => { 
+ 		if (err) return console.log(err) 
+ 		console.log('sauvegarder dans la BD') 
+ 		res.send(JSON.stringify(req.body)) 
+ 	})
+})
+
 
 /*-----------------trier---------------*/
 app.get('/trier/:clef/:ordre', (req, res) => {
